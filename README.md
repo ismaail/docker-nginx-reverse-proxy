@@ -10,9 +10,16 @@ $ tar xvzf docker-gen-linux-amd64-0.7.3.tar.gz
 $ sudo cp ./docker-gen /usr/local/bin/docker-gen
 ```
 
-##### Templates
+#### Templates
 
 ```
 $ mkdir -p /tmp/templates && cd /tmp/templates
 $ curl -o nginx.tmpl https://raw.githubusercontent.com/jwilder/docker-gen/master/templates/nginx.tmpl
+```
+
+Add `VIRTUAL_HOST` env value to the nginx target
+
+```
+environment:
+  - VIRTUAL_HOST=api.announces.dev
 ```
