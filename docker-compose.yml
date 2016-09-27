@@ -14,7 +14,7 @@ services:
     image: jwilder/docker-gen
     volumes:
       - "/var/run/docker.sock:/tmp/docker.sock:ro"
-      - "/tmp/templates:/etc/docker-gen/templates"
+      - "./templates:/etc/docker-gen/templates"
     volumes_from:
       - nginx
     links:
