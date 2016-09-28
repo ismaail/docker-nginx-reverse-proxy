@@ -23,3 +23,21 @@ Add `VIRTUAL_HOST` env value to the nginx target
 environment:
   - VIRTUAL_HOST=api.announces.dev
 ```
+
+#### Big header Response Problem
+
+Add to the Proxy Nginx `nginx.conf`
+
+```
+proxy_buffer_size   128k;
+proxy_buffers   4 256k;
+proxy_busy_buffers_size   256k;
+```
+
+add to project nginx `default.conf` file:
+
+```
+fastcgi_buffers 16 32k;
+fastcgi_buffer_size 32k;
+
+```
