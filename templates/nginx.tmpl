@@ -13,7 +13,7 @@ upstream {{ $host }} {
 
 	{{ $addrLen := len $value.Addresses }}
 	{{ $network := index $value.Networks 0 }}
-	
+
 	{{/* If only 1 port exposed, use that */}}
 	{{ if eq $addrLen 1 }}
 		{{ with $address := index $value.Addresses 0 }}
@@ -49,6 +49,7 @@ server {
 	proxy_buffering off;
 	error_log /proc/self/fd/2;
 	access_log /proc/self/fd/1;
+	client_max_body_size 100M;
 
 	location / {
 		proxy_pass http://{{ trim $host }};
