@@ -4,7 +4,7 @@
 
 Download `docker-gen`
 
-```
+```sh
 $ wget https://github.com/jwilder/docker-gen/releases/download/0.7.3/docker-gen-linux-amd64-0.7.3.tar.gz
 $ tar xvzf docker-gen-linux-amd64-0.7.3.tar.gz
 $ sudo cp ./docker-gen /usr/local/bin/docker-gen
@@ -12,7 +12,7 @@ $ sudo cp ./docker-gen /usr/local/bin/docker-gen
 
 #### Templates
 
-```
+```sh
 $ mkdir -p /tmp/templates && cd /tmp/templates
 $ curl -o nginx.tmpl https://raw.githubusercontent.com/jwilder/docker-gen/master/templates/nginx.tmpl
 ```
