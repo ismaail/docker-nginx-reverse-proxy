@@ -44,7 +44,9 @@ upstream {{ $host }} {
 }
 
 server {
-	gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+	gzip on;
+	gzip_disable "msie6";
+	gzip_types text/plain text/css application/json application/javascript application/x-javascript text/xml application/xml application/xml+rss text/javascript application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon;
 
 	server_name {{ $host }};
 	proxy_buffering off;
