@@ -6,6 +6,7 @@ services:
     image: nginx
     volumes:
       - "/tmp/nginx:/etc/nginx/conf.d"
+      - "./html:/usr/share/nginx/html"
     ports:
       - "80:80"
     restart: always
