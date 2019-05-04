@@ -12,6 +12,8 @@ stop:
 down:
 	docker-compose down
 
-
 reboot:
 	docker-compose down && docker-compose up -d
+
+nginx-reload:
+	docker kill -s HUP nginx 2>/dev/null || true
