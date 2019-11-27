@@ -71,7 +71,7 @@ upstream {{ $host }} {
 server {
 	gzip on;
 	gzip_disable "msie6";
-	gzip_types text/plain text/css application/json application/javascript application/x-javascript text/xml application/xml application/xml+rss text/javascript application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon;
+	gzip_types text/plain text/css image/webp image/png image/jpg image/jpeg application/json application/javascript application/x-javascript text/xml application/xml application/xml+rss text/javascript application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon;
 
     listen 80;
     listen 443 ssl http2;
