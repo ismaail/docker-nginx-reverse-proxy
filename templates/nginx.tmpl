@@ -68,6 +68,15 @@ upstream {{ $host }} {
 {{ end }}
 }
 
+# Expires map
+map $sent_http_content_type $expires {
+    default                    off;
+    text/html                  epoch;
+    text/css                   21600;
+    application/javascript     21600;
+    ~image/                    21600;
+}
+
 server {
 	gzip on;
 	gzip_disable "msie6";
@@ -81,6 +90,9 @@ server {
 	error_log /proc/self/fd/2;
 	access_log /proc/self/fd/1;
 	client_max_body_size 100M;
+
+	expires $expires;
+	add_header Cache-Control "public, no-transform";
 
 	location / {
 		proxy_pass http://{{ trim $host }};
