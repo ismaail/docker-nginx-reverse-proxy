@@ -1,4 +1,4 @@
-version: "3"
+version: "3.8"
 
 services:
   nginx:
@@ -29,5 +29,4 @@ services:
 
 networks:
   default:
-    external:
-      name: nginx_reverse_proxy_network
+    name: nginx_reverse_proxy_network
