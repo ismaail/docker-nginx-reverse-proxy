@@ -72,9 +72,10 @@ upstream {{ $host }} {
 map $sent_http_content_type $expires {
 	default                    off;
 	text/html                  epoch;
-	text/css                   21600;
-	application/javascript     21600;
-	~image/                    21600;
+	text/css                   30d;
+	application/javascript     30d;
+	~image/                    30d;
+	font/woff                  30d;
 }
 
 server {
